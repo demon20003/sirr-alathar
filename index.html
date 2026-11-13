@@ -212,6 +212,7 @@ label.l{font-size:15px;color:var(--muted)}
 .bt2 p{margin:0;font-size:17px}
 .shop2{display:flex;gap:24px;align-items:flex-start;padding-block:28px 56px;flex-wrap:wrap}
 .shop2 .lc{flex:1 1 560px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.ft .dev{flex-basis:100%;margin:0;font-size:14px;opacity:.75}.ft .dev b{font-weight:700}
 .stars{color:var(--gold);letter-spacing:1px}.stars i{color:var(--line);font-style:normal}.rt{font-size:14px;color:var(--muted)}
 .rvs{display:flex;flex-direction:column;gap:12px}.rvs .rv{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--surface)}.rvs .rv p{margin:6px 0 0}
 .fbtn{display:none;align-items:center;gap:8px;margin-bottom:12px}
@@ -394,7 +395,7 @@ function footer(){var s=site();var b=[];
  if(s.whatsapp)b.push('<p>واتساب: <span dir="ltr">'+esc(s.whatsapp)+'</span></p>');
  if(s.email)b.push('<p>البريد: <span dir="ltr">'+esc(s.email)+'</span></p>');
  var c=[];if(s.instagram)c.push('<p>إنستغرام: <a href="'+esc(s.instagram)+'" target="_blank" rel="noopener" dir="ltr">'+esc(s.instagram)+'</a></p>');if(s.hours)c.push('<p>'+esc(s.hours)+'</p>');
- return '<footer class="ft"><div class="in"><div><h3>سرّ الأثر</h3><p>'+esc(s.subtitle)+'</p></div>'+(b.length?'<div><h3>تواصل معنا</h3>'+b.join('')+'</div>':'')+(c.length?'<div><h3>تابعنا</h3>'+c.join('')+'</div>':'')+'<p class="cp">'+esc(s.rights)+'</p></div></footer>'
+ return '<footer class="ft"><div class="in"><div><h3>سرّ الأثر</h3><p>'+esc(s.subtitle)+'</p></div>'+(b.length?'<div><h3>تواصل معنا</h3>'+b.join('')+'</div>':'')+(c.length?'<div><h3>تابعنا</h3>'+c.join('')+'</div>':'')+'<p class="cp">'+esc(s.rights)+'</p><p class="dev">تطوير: <b>demon</b> · <bdi dir="ltr">@x_dxg4</bdi></p></div></footer>'
 }
 function bn(){var r=route();if(r.indexOf('p-')===0)r='shop';var n=S.cart.reduce(function(a,i){return a+i.qty},0);return '<nav class="bn" aria-label="التنقل السفلي">'+[['home','الرئيسية'],['shop','العطور'],['cart','السلة'+(n?' ('+n+')':'')],['track','تتبع طلبي']].map(function(x){return '<a href="#'+x[0]+'" class="'+(r===x[0]?'on':'')+'">'+x[1]+'</a>'}).join('')+'</nav>'}
 function shell(cur,body){var w=site().whatsapp;return header(cur)+'<div class="page">'+body+'</div>'+footer()+bn()+(w?'<a class="wa" href="'+esc(waLink(w))+'" target="_blank" rel="noopener" aria-label="تواصل معنا عبر واتساب">واتساب</a>':'')}
